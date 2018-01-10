@@ -4,3 +4,4 @@ __pycache__/
 *.mo
 local_settings.py
 env/
+db*
