@@ -25,12 +25,13 @@ class Post(models.Model):
 	title = models.CharField(max_length=40)
 	code = models.TextField()
 	created = models.DateTimeField(auto_now_add=True)
-	time_to_live = models.DateTimeField()
+	time_to_live = models.DateTimeField(blank=True)
 	syntax = models.ForeignKey(Syntax)
 
 	ttl_option = models.CharField(max_length=10,
 								  choices=TTL_OPTION,
-								  default=None)
+								  null=True,
+								  blank=True)
 
 	def __str__(self):
 		return "{} {}".format(self.syntax.syntax_name,
@@ -38,7 +39,7 @@ class Post(models.Model):
 
 	def save(self, *args, **kwargs):
 		if self.ttl_option is None:
-			self.time_to_live = datetime.datetime,now() + \
+			self.time_to_live = datetime.datetime.now() + \
 								datetime.timedelta(minutes=10)
 		else:
 			k, v = self.ttl_option.split("=")
