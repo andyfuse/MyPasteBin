@@ -1,0 +1,51 @@
+{% extends "app/base.html" %}
+{% load i18n %}
+{% block pastebin %}
+    <form action="{% url 'index'%}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label>{% trans form.title.label %}</label>
+            {{ form.title }}
+        </div>
+        <div class="form-group">
+            <label>{% trans form.syntax.label %}</label>
+            {{ form.syntax }}   
+        </div>
+        <div class="form-group">
+            <label>{% trans form.ttl_option.label %}</label>
+            {{ form.ttl_option }}   
+        </div>
+        <div class="form-group">
+            <label>{% trans form.code.label %}</label>
+            {{ form.code }} 
+        </div>  
+        {% if post_on_edit %}
+            <input type='hidden' name='post_id' value={{ post_on_edit }}>
+        {% endif %}     
+        {% if form.non_field_errors %}            
+            <div class="alert alert-danger" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span>{% trans "Помилка:" %}</span>
+              {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+        <button type="submit" class="btn btn-default">{% trans "Додати" %}</button>
+    </form>
+{% endblock %}             
+{% block recent %}
+    <b>{% trans "Нещодавно доданий:" %}</b>
+    {% if latest_posts %}
+        <ul class="list-group fa-ul">
+        {% for item in latest_posts %}
+            <li class="list-group-item fa-li " >
+                <i class="fa fa-check-square"></i>
+                <a href="/view/{{ item.id }}/"> {{ item.title }}-{{ item.created }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <br>
+        <i class="fa fa-frown-o fa fa-2x"></i>
+        <a href="{% url 'index'%}">{% trans "Немає постів. Перейдить до домівки, щоб додати пост." %}</a>
+    {% endif %}
+{% endblock %}

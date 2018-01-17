@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>My Pastebin app</title>
+		{% load staticfiles %}
+		{% load i18n %}
+		{% if LANGUAGE_CODE|stringformat:"s" == "ar" %}
+			<link rel="stylesheet" type="text/css" href="{% static 'app/bootstrap/css/bootstrap-rtl.min.css' %}">
+		{% else %}
+			<link rel="stylesheet" type="text/css" href="{% static 'app/bootstrap/css/bootstrap.min.css' %}">
+		{% endif %}
+		<link rel="stylesheet" type="text/css" href="{% static 'app/bootstrap/css/bootstrap-theme.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'app/fa/css/font-awesome.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'app/css/style.css' %}" />
+		<link href="{% static 'app/css/prism.css' %}" type="text/css" rel="stylesheet" />
+		<script type="text/javascript" src="{% static 'app/js/jquery-2.1.3.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'app/bootstrap/js/bootstrap.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'app/js/prism.js' %}"></script>
+		<script type="text/javascript" src="{% static 'app/js/mine.js' %}"></script>
+	</head>
+	<body >
+		<div class="container" >
+			<div class="row"  >
+				{% include "app/header.html" %}
+			</div>
+			<div class="row">
+				{% block view %} {% endblock %}
+			</div>
+			<div class="row" >
+				<div class="col-xs-6"  >
+					{% block pastebin %}{% endblock %}
+				</div>
+				<div class="col-xs-6" >
+					{% block recent %} {% endblock %}
+				</div>
+			</div>
+			<div class="row">
+				{% block add %} {% endblock %}
+			</div>
+			<div class="row">
+				{% block delete_dlg %} {% endblock %}
+			</div>
+			<div class="row">
+				{% block deleted %} {% endblock %}
+			</div>
+			<div class="row">
+				{% include 'app/footer.html' %}
+			</div>
+		</div>
+	</body>
+</html>

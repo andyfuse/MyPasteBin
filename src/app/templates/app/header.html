@@ -1,0 +1,44 @@
+{% load staticfiles %}
+{% load i18n %}
+<div class="col-xs-12" >
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container" >
+	  	<div class="row">
+	    	<div class="col-xs-4" >
+				<h2 class="heading"><a href="/">Pastebin</a></h2>
+			</div>
+	    	<div class="col-xs-6" >
+			</div>
+			<div class="col-xs-2">
+				<div class"container">
+					<div class="row" >
+						{% for lang in LANGUAGES %}
+							<form id="lang" name="setLang{{ lang.1}}" action="{% url 'set_language' %}" method="POST">
+	        					{% csrf_token %}	 
+	        					<input name="next" type="hidden" value="{{ request.path }}">
+	        					<input type="hidden" name="language" value="{{ lang.0 }}">
+								<a class="LangIco" href="#">
+								{% with 'app/img/'|add:lang.1|add:'.png' as PictureFileName %}
+									<img src="{% static PictureFileName %}"/></a>
+								{% endwith %}
+        					</form>
+						{% endfor %}
+					</div>
+					<div class="row">
+						{% get_available_languages as LANGUAGES %}
+						{% for lang in LANGUAGES %}
+							{% if LANGUAGE_CODE|stringformat:"s" ==  lang.0 %}
+								<div class="box2">
+        							<i class="fa fa-cog fa-spin"></i>
+								</div>	
+							{% else %}
+								<div class="box2"></div>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+	  	</div>
+	  </div>
+	</nav>
+</div> 

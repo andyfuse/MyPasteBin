@@ -3,16 +3,6 @@ import datetime
 from django.db import models
 
 
-TTL_OPTION = (
-	(None, "----"),
-	("minutes=10", "10 minutes"),
-	("hours=1", "1 hour"),
-	("days=1", "1 day"),
-	("days=7", "1 week"),
-	("days=30", "1 month")
-)
-
-
 class Syntax(models.Model):
 	syntax_id = models.AutoField(primary_key=True)
 	syntax_name = models.CharField(max_length=20)
@@ -22,6 +12,14 @@ class Syntax(models.Model):
 
 
 class Post(models.Model):
+	TTL_OPTIONS = (
+		(None, "----"),
+		("minutes=10", "10 minutes"),
+		("hours=1", "1 hour"),
+		("days=1", "1 day"),
+		("days=7", "1 week"),
+		("days=30", "1 month"))
+
 	title = models.CharField(max_length=40)
 	code = models.TextField()
 	created = models.DateTimeField(auto_now_add=True)
@@ -29,7 +27,7 @@ class Post(models.Model):
 	syntax = models.ForeignKey(Syntax)
 
 	ttl_option = models.CharField(max_length=10,
-								  choices=TTL_OPTION,
+								  choices=TTL_OPTIONS,
 								  null=True,
 								  blank=True)
 

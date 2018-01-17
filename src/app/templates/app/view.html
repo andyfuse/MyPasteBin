@@ -1,0 +1,52 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block view %}
+    {% if error %}     
+        <div class="col-xs-12">
+            {% trans "Сталася помилка" %}:<br>
+            {{error}}
+        </div>
+    {% else %}
+        <div class="col-xs-6">
+            <h3 class="heading">{% trans "Створенно" %}:{{ object.created }}</h3>
+            <div>
+                {% if object.syntax|stringformat:"s" == "C++" %}
+                    <pre class="line-numbers"><code class="language-cpp">{{ object.code }}</code></pre>
+                {% elif object.syntax|stringformat:"s" == "C#" %}
+                    <pre class="line-numbers"><code class="language-csharp">{{ object.code }}</code></pre>
+                {% elif object.syntax|stringformat:"s" == "HTML" %}
+                    <pre class="line-numbers"><code class="language-markup">{{ object.code }}</code></pre>
+                {% else %}
+                    <pre class="line-numbers"><code class="language-{{ object.syntax|lower }}">{{ object.code }}</code></pre>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="about">
+                <div class="bg-info">
+                    <h4 class="heading"><b>{% trans "Заголовок" %}</b> <i class="fa fa-file-text-o"></i>  <i>{{ object.title }}</i></h4>
+                    <h4 class="heading"><b>{% trans "Час збереження" %}</b> <i class="fa fa-clock-o"></i> <i>{{ object.time_to_live }}</i></h4>
+                    <h4 class="heading"><b>{%trans "Синтакс" %}</b> <i class="fa fa-language"></i>  <i>{{ object.syntax }}</i></h4>
+                </div>
+                <ul id="menu">
+                    <li>
+                        <a id="Copy" class="btn btn-success" href="{% url 'index' %}?post_id={{object.pk}}">
+                        <i class="fa fa-files-o fa-2x"></i>{% trans "Створити копiю" %}</a>
+                    </li>
+                    <li>
+                        <form id="onChange" name="Change" action="{% url 'index' %}" method="GET" >
+                            <input type="hidden" name="post_id" value="{{ object.pk }}">  
+                            <input type="hidden" name="mark" value="onChange">                       
+                        </form>
+                        <a id="Change" class="btn btn-info" href="#"><i class="fa fa-pencil-square-o fa-2x"></i>{% trans "Змінити" %}</a>
+                    </li>
+                    <li>                      
+                        <a id="Del" class="btn btn-danger" href="{% url 'post-delete' pk=object.pk %}">
+                        <i class="fa fa-times fa-2x"></i>{% trans "Видилити" %}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    {% endif %} 
+{% endblock %}

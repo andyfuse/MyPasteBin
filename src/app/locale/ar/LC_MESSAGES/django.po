@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-16 20:54+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: templates/pb/add.html:7
+msgid "Ви успішно додали Пастбин!"
+msgstr "كنت قد قدمت بنجاح Pastbyn!"
+
+#: templates/pb/base.html:110
+msgid "Про сайт:"
+msgstr "حول:"
+
+#: templates/pb/index.html:9
+msgid "Заголовок:"
+msgstr "العنوان:"
+
+#: templates/pb/index.html:13
+msgid "Оберіть мову:"
+msgstr "اختيار اللغة:"
+
+#: templates/pb/index.html:30
+msgid "Оберіть час збереження"
+msgstr "اختر إنقاذ"
+
+#: templates/pb/index.html:45
+msgid "Помістіть код тут:"
+msgstr "ضع التعليمات البرمجية هنا:"
+
+#: templates/pb/index.html:52
+msgid "Помилка:"
+msgstr "الخطأ:"
+
+#: templates/pb/index.html:57
+msgid "Додати"
+msgstr "إضافة"
+
+#: templates/pb/index.html:65
+msgid "Нещодавно доданий:"
+msgstr "وأضاف في الآونة الأخيرة"
+
+#: templates/pb/index.html:78
+msgid "Немає постів.Перейдить до домівки, щоб додати пост."
+msgstr "لا توجد رسائل، فتح الصفحة الرئيسية لإضافة"
+
+#: templates/pb/modify.html:8 templates/pb/view.html:15
+msgid "Сталася помилка"
+msgstr "حدث خطأ"
+
+#: templates/pb/modify.html:9
+msgid "Пост"
+msgstr "رسالة"
+
+#: templates/pb/modify.html:13
+msgid "Ви успішно видалили повідомлення"
+msgstr "لقد نجحت في إزالة الرسالة"
+
+#: templates/pb/modify.html:15
+msgid " Ви будете перенаправлені на головну сторінку у"
+msgstr "سيتم نقلك إلى الصفحة الرئيسية "
+
+#: templates/pb/modify.html:15
+msgid " секунд"
+msgstr " ثواني"
+
+#: templates/pb/view.html:20
+msgid "Створенно"
+msgstr "خلق"
+
+#: templates/pb/view.html:36
+msgid "Заголовок"
+msgstr "لقب"
+
+#: templates/pb/view.html:37
+msgid "Час збереження"
+msgstr "توفير الوقت"
+
+#: templates/pb/view.html:38
+msgid "Синтакс"
+msgstr "بناء الجملة"
+
+#: templates/pb/view.html:42
+msgid "Створити копiю"
+msgstr "مكررة"
+
+#: templates/pb/view.html:45
+msgid "Змінити"
+msgstr "تغيير"
+
+#: templates/pb/view.html:48
+msgid "Видилити"
+msgstr "نزع"
+
+#: views.py:13
+msgid "10 хвилин"
+msgstr "10 دقائق"
+
+#: views.py:14
+msgid "1 година"
+msgstr "مرة 1"
+
+#: views.py:15
+msgid "1 день"
+msgstr "1 يوم"
+
+#: views.py:16
+msgid "1 неділя"
+msgstr "1 الأحد"
+
+#: views.py:17
+msgid "1 місяць"
+msgstr "1 شهر"
+
+#: views.py:38
+msgid "Кожне поле повинно бути заповненим!"
+msgstr "يجب تعبئة كل حقل!"
+
+#: views.py:60
+msgid "Нічого додати ! Перейдіть на головну сторінку."
+msgstr "لا شيء الكثير ليقوله! الذهاب إلى الصفحة الرئيسية."
+
+#: templates/pb/modify.html:5
+msgid "Видалення посту:"
+msgstr "تم إزالة آخر:"
+
+#: templates/pb/modify.html:6
+msgid "Ви впевнені що хочете видалити"
+msgstr "?تحديد هل أنت متأكد أنك تريد حذف"
+
+#: templates/pb/modify.html:9
+msgid "Так, в пекло його."
+msgstr "!تحديد نعم"
+
+#: templates/pb/modify.html:10
+msgid "Нi, я передумав."
+msgstr "تحديد لا، أنا غيرت رأيي."

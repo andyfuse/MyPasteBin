@@ -1,0 +1,12 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block delete_dlg %}
+    <h1>{% trans "Видалення посту:" %}</h1>
+    <p>{% trans "Ви впевнені що хочете видалити" %} "{{ object.title }}" ?</p>
+    <form action="{% url 'post-delete' pk=object.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-default">{% trans 'Так, в пекло його.'%}</button>
+        <a href="{% url 'index' %}">{% trans "Нi, я передумав." %}</a>
+    </form>
+{% endblock %}

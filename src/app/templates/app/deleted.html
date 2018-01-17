@@ -1,0 +1,15 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block deleted %}
+	<div class="col-xs-12">
+	    <h3 class="heading success">
+	        <i class="fa fa-check-square-o"></i>
+	        {% trans "Ви успішно видалили повідомлення" %}!
+	    </h3> 
+	    <p>
+	        {% trans " Ви будете перенаправлені на головну сторінку у" %} 
+	        <span id="seconds">3</span>{% trans " секунд" %}...
+	    </p>
+	</div>
+{% endblock %}

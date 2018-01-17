@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-09 15:59+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: templates/pb/add.html:7
+msgid "Ви успішно додали Пастбин!"
+msgstr "Вы успешно добавили Пастбин!"
+
+#: templates/pb/base.html:98
+msgid "Про сайт:"
+msgstr "Про сайт"
+
+#: templates/pb/index.html:9
+msgid "Заголовок:"
+msgstr "Заголовок:"
+
+#: templates/pb/index.html:13
+msgid "Оберіть мову:"
+msgstr "Выберите язык:"
+
+#: templates/pb/index.html:30
+msgid "Оберіть час збереження"
+msgstr "Выберите срок хранения"
+
+msgid "Створити копiю"
+msgstr "Сделать копию"
+
+#: templates/pb/index.html:45
+msgid "Помістіть код тут:"
+msgstr "Поместить код сюда:"
+
+#: templates/pb/index.html:52
+msgid "Помилка:"
+msgstr "Ошибка:"
+
+#: templates/pb/index.html:57
+msgid "Додати"
+msgstr "Добавить"
+
+#: templates/pb/index.html:65
+msgid "Нещодавно доданий:"
+msgstr "Недавно добавленый"
+
+#: templates/pb/index.html:78
+msgid "Немає постів.Перейдить до домівки, щоб додати пост."
+msgstr "Нету постов.Перейдите на главную страницу чтобы добавить."
+
+#: templates/pb/modify.html:8 templates/pb/view.html:15
+msgid "Сталася помилка"
+msgstr "Произошла ошибка"
+
+#: templates/pb/modify.html:9
+msgid "Пост"
+msgstr "Пост"
+
+#: templates/pb/modify.html:13
+msgid "Ви успішно видалили повідомлення"
+msgstr "Вы успешно удалили пост."
+
+#: templates/pb/modify.html:15
+msgid " Ви будете перенаправлені на головну сторінку у"
+msgstr "Вы будете перенаправлены на главную страницу через"
+
+#: templates/pb/modify.html:15
+msgid " секунд"
+msgstr " секунд"
+
+#: templates/pb/view.html:20
+msgid "Створенно"
+msgstr "Создано"
+
+#: templates/pb/view.html:36
+msgid "Заголовок"
+msgstr "Заголовок"
+
+#: templates/pb/view.html:37
+msgid "Час збереження"
+msgstr "Срок хранения"
+
+#: templates/pb/view.html:38
+#, fuzzy
+#| msgid "Синтакс:"
+msgid "Синтакс"
+msgstr "Синтаксис"
+
+#: templates/pb/view.html:42
+msgid "Змінити"
+msgstr "Изменить"
+
+#: templates/pb/view.html:45
+msgid "Видилити"
+msgstr "Удалить"
+
+#: views.py:13
+msgid "10 хвилин"
+msgstr "10 минут"
+
+#: views.py:14
+msgid "1 година"
+msgstr "1 час"
+
+#: views.py:15
+msgid "1 день"
+msgstr "1 день"
+
+#: views.py:16
+msgid "1 неділя"
+msgstr "1 неделя"
+
+#: views.py:17
+msgid "1 місяць"
+msgstr "1 месяц"
+
+#: views.py:38
+msgid "Кожне поле повинно бути заповненим!"
+msgstr "Каждое поле должно быть заполнено!"
+
+#: views.py:60
+msgid "Нічого додати ! Перейдіть на головну сторінку."
+msgstr "Нечего добавить!Перейдите на главную страницу"
+
+#: templates/pb/modify.html:5
+msgid "Видалення посту:"
+msgstr "Удаление поста:"
+
+#: templates/pb/modify.html:6
+msgid "Ви впевнені що хочете видалити"
+msgstr "Вы действительно хотите удалить"
+
+#: templates/pb/modify.html:9
+msgid "Так, в пекло його."
+msgstr "Да."
+
+#: templates/pb/modify.html:10
+msgid "Нi, я передумав."
+msgstr "Нет."
