@@ -6,7 +6,7 @@ from .models import Syntax, Post
 class PostAdminPanel(admin.ModelAdmin):
 	readonly_fields = ("created",)
 	fieldsets = [
-		("About", {"fields": ["title"]}),
+		("About", {"fields": ["title", "slug"]}),
 		("Date information", {"fields": ["created", "time_to_live", "ttl_option"], "classes": ["collapse",]}),
 		("Code", {"fields": ["syntax", "code"]})
 	]
