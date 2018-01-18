@@ -42,7 +42,7 @@
                         <a id="Change" class="btn btn-info" href="#"><i class="fa fa-pencil-square-o fa-2x"></i>{% trans "Змінити" %}</a>
                     </li>
                     <li>                      
-                        <a id="Del" class="btn btn-danger" href="{% url 'post-delete' pk=object.pk %}">
+                        <a id="Del" class="btn btn-danger" href="{% url 'post-delete' slug=object.slug %}">
                         <i class="fa fa-times fa-2x"></i>{% trans "Видилити" %}</a>
                     </li>
                 </ul>

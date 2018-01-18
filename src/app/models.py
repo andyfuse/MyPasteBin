@@ -1,6 +1,7 @@
 import datetime
 
 from django.db import models
+from django.core.urlresolvers import reverse
 from django.utils.text import slugify
 
 
@@ -43,6 +44,8 @@ class Post(models.Model):
 			return 	self.make_slug(new_slug=new_slug)
 		return slug
 
+	def get_absolute_url(self):
+		return reverse("post-view", kwargs={"slug": self.slug})
 
 	def __str__(self):
 		return "{} {}".format(self.syntax.syntax_name,

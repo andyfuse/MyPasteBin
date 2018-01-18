@@ -20,7 +20,7 @@ def index(request):
         if form.is_valid():
             post = form.save()
             return HttpResponseRedirect(reverse('post-view', 
-                                                args=(post.pk,)))
+                                                args=(post.slug,)))
         else:  
             form.add_error(None,forms.ValidationError(
                                 _(u"Кожне поле повинно бути заповненим!")))

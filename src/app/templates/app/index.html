@@ -39,7 +39,7 @@
         {% for item in latest_posts %}
             <li class="list-group-item fa-li " >
                 <i class="fa fa-check-square"></i>
-                <a href="/view/{{ item.id }}/"> {{ item.title }}-{{ item.created }}</a>
+                <a href="{{ item.get_absolute_url }}"> {{ item.title }}-{{ item.created }}</a>
             </li>
         {% endfor %}
         </ul>
