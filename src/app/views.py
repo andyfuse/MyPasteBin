@@ -16,13 +16,12 @@ def index(request):
         post_pk = request.POST.get("post_id", 0)
         post_obj = Post.objects.filter(pk=post_pk).first()
         form = PostForm(request.POST, instance=post_obj)   
-        
         if form.is_valid():
             post = form.save()
             return HttpResponseRedirect(reverse('post-view', 
                                                 args=(post.slug,)))
         else:  
-            form.add_error(None,forms.ValidationError(
+            form.add_error(None, forms.ValidationError(
                                 _(u"Кожне поле повинно бути заповненим!")))
 
     elif request.method == "GET":
