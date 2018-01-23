@@ -6,9 +6,12 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django import forms
 from django.views.generic import DeleteView
+from rest_framework import generics
+from rest_framework import permissions
 
 from app.models import Post
 from app.forms import PostForm
+from app.serializers import PostListViewSerializer, PostSerializer
 
 
 def index(request):  
@@ -46,3 +49,20 @@ class delete_post(DeleteView):
 
     def get_success_url(self):
         return reverse('successful_delete')
+
+
+class PostListCreateAPIView(generics.ListCreateAPIView):
+    permission_classes = [permissions.IsAdminUser,]
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return PostListViewSerializer
+        return PostSerializer
+
+
+class PostCRUDAPIView(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [permissions.IsAdminUser,]
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer

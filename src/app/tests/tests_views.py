@@ -54,3 +54,36 @@ class PostViewTest(TestCase):
 
 		self.assertFalse(response.context['form'].is_valid())
 		self.assertTrue("title" in response.context['form'].errors.keys())
+
+	def test_post_list_api_call(self):
+		user_info = dict(username='testuser', password='12345')
+		user = User.objects.create_user(**user_info)
+		user.is_staff = True
+		user.save()
+		self.client.login(**user_info)
+		Post.objects.create(title='test1', code='code',
+							syntax=Syntax.objects.create(syntax_name="syntax_name1"))
+		Post.objects.create(title='test2', code='code',
+							syntax=Syntax.objects.create(syntax_name="syntax_name2"))
+		response = self.client.get(reverse("api-list-post"))
+
+		self.assertEqual(response.status_code, 200)
+		self.assertEqual(len(response.data), 2)
+
+	def test_post_create_api_call(self):
+		Syntax.objects.create(syntax_name="syntax_name1")
+		user_info = dict(username='testuser', password='12345')
+		user = User.objects.create_user(**user_info)
+		user.is_staff = True
+		user.save()
+		self.client.login(**user_info)
+		post_obj_data = {
+			'title': 'title',
+			'code': 'code',
+			'ttl_option': 'minutes=10',
+			'syntax': "1"
+		}
+		response = self.client.post(reverse('api-list-post'), data=post_obj_data)
+
+		self.assertEqual(response.status_code, 201)
+		self.assertTrue(Post.objects.filter(title=post_obj_data["title"]).exists())

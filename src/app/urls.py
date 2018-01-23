@@ -13,4 +13,6 @@ urlpatterns = patterns('',
     url(r'^deleted/$',TemplateView.as_view(template_name="app/deleted.html"),
     	                                   name='successful_delete'),
     url(r'^del/(?P<slug>\w+)/$', views.delete_post.as_view(), name='post-delete'),
+    url(r'^api/posts/$', views.PostListCreateAPIView.as_view(), name='api-list-post'),
+    url(r'^api/posts/(?P<pk>\d+)$', views.PostCRUDAPIView.as_view(), name='api-post'),
 )
